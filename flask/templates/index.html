@@ -1,0 +1,149 @@
+<!DOCTYPE html><html>
+<head>
+    <title>Wine Classification - SVM</title><style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f2f2f2;
+        margin: 0;
+        padding: 30px;
+    }
+
+    .container {
+        width: 600px;
+        margin: auto;
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px #aaa;
+    }
+
+    h1 {
+        text-align: center;
+        color: #722f37;
+    }
+
+    .input-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    input {
+        width: 95%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        background: #722f37;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #501f26;
+    }
+
+    .result {
+        margin-top: 20px;
+        padding: 15px;
+        background: #e8f5e9;
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+    }
+</style>
+
+</head><body><div class="container"><h1>🍷 Wine Classification</h1>
+
+<form action="/predict" method="POST">
+
+    <div class="input-group">
+        <label>Alcohol</label>
+        <input type="number" step="any" name="alcohol" required>
+    </div>
+
+    <div class="input-group">
+        <label>Malic Acid</label>
+        <input type="number" step="any" name="malic_acid" required>
+    </div>
+
+    <div class="input-group">
+        <label>Ash</label>
+        <input type="number" step="any" name="ash" required>
+    </div>
+
+    <div class="input-group">
+        <label>Alcalinity of Ash</label>
+        <input type="number" step="any" name="alcalinity" required>
+    </div>
+
+    <div class="input-group">
+        <label>Magnesium</label>
+        <input type="number" step="any" name="magnesium" required>
+    </div>
+
+    <div class="input-group">
+        <label>Total Phenols</label>
+        <input type="number" step="any" name="total_phenols" required>
+    </div>
+
+    <div class="input-group">
+        <label>Flavanoids</label>
+        <input type="number" step="any" name="flavanoids" required>
+    </div>
+
+    <div class="input-group">
+        <label>Nonflavanoid Phenols</label>
+        <input type="number" step="any" name="nonflavanoid_phenols" required>
+    </div>
+
+    <div class="input-group">
+        <label>Proanthocyanins</label>
+        <input type="number" step="any" name="proanthocyanins" required>
+    </div>
+
+    <div class="input-group">
+        <label>Color Intensity</label>
+        <input type="number" step="any" name="color_intensity" required>
+    </div>
+
+    <div class="input-group">
+        <label>Hue</label>
+        <input type="number" step="any" name="hue" required>
+    </div>
+
+    <div class="input-group">
+        <label>OD280/OD315</label>
+        <input type="number" step="any" name="od280" required>
+    </div>
+
+    <div class="input-group">
+        <label>Proline</label>
+        <input type="number" step="any" name="proline" required>
+    </div>
+
+    <button type="submit">
+        Predict Wine Class
+    </button>
+
+</form>
+
+{% if prediction %}
+    <div class="result">
+        Prediction: {{ prediction }}
+    </div>
+{% endif %}
+
+</div></body>
+</html>
